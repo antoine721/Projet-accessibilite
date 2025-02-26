@@ -1,0 +1,533 @@
+/* Variables pour la cohérence des couleurs et faciliter les changements */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --link-color: #2980b9;
+  --link-hover-color: #1a5276;
+  --focus-outline: 3px solid #f39c12;
+  --spacing-unit: 1rem;
+  --border-radius: 4px;
+  --transition-speed: 0.3s;
+  --font-size-base: 16px;
+}
+
+/* Réinitialisation de base et styles généraux */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; /* Permet aux utilisateurs de zoomer via les paramètres du navigateur */
+  scroll-behavior: smooth; /* Défilement fluide pour les liens d'ancrage */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0 auto;
+  font-size: var(--font-size-base);
+}
+
+/* Amélioration du focus pour tous les éléments interactifs */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+  transition: outline-offset var(--transition-speed) ease;
+}
+
+/* Styles pour le skip navigation - correctement masqué mais accessible avec Tab */
+.content-skip-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.content-skip-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  text-decoration: none;
+  font-weight: bold;
+  transform: translateY(-100%); /* Caché par défaut */
+  transition: transform 0.3s;
+}
+
+.skip-to-content:focus {
+  left: 0;
+  transform: translateY(0); /* Visible lors du focus */
+  outline: var(--focus-outline);
+}
+
+/* Styles pour le nouveau panneau d'accessibilité */
+.accessibility-toggle {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--primary-color);
+  color: white;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: background-color var(--transition-speed) ease;
+}
+
+.accessibility-toggle:hover,
+.accessibility-toggle:focus {
+  background-color: var(--secondary-color);
+  outline: var(--focus-outline);
+}
+
+.access-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.accessibility-panel {
+  position: fixed;
+  left: -300px; /* Initialement hors de l'écran */
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem;
+  z-index: 998;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: left var(--transition-speed) ease;
+  overflow-y: auto;
+}
+
+.accessibility-panel.open {
+  left: 0;
+}
+
+.accessibility-panel h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.btn-access {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.btn-access:hover,
+.btn-access:focus {
+  background-color: var(--link-hover-color);
+}
+
+.close-panel {
+  margin-top: 2rem;
+  background-color: #e74c3c;
+}
+
+.close-panel:hover,
+.close-panel:focus {
+  background-color: #c0392b;
+}
+
+/* Classes pour les options d'accessibilité - Fixes pour éviter le décalage */
+body.font-size-large {
+  font-size: calc(var(--font-size-base) * 1.2);
+}
+
+body.font-size-larger {
+  font-size: calc(var(--font-size-base) * 1.4);
+}
+
+/* Solution pour éviter le décalage avec les filtres */
+html.grayscale,
+html.negative-contrast {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Application des filtres au niveau html plutôt que body pour éviter les problèmes de layout */
+
+html.negative-contrast body {
+  filter: invert(100%);
+}
+
+body.high-contrast {
+  --background-color: #000;
+  --text-color: #fff;
+  background-color: #000;
+  color: #fff;
+}
+
+body.high-contrast a {
+  color: yellow;
+}
+
+body.light-background {
+  --background-color: #fff;
+  --text-color: #000;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Header et navigation */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  padding-bottom: 0;
+  background-color: var(--background-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header img {
+  width: 100%;
+  height: auto;
+}
+nav {
+  width: 100vw;
+  border: 1px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+  gap: var(--spacing-unit);
+}
+
+nav a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+  display: inline-block;
+  transition: color var(--transition-speed) ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Main content */
+main {
+  margin: 2rem 0;
+}
+
+/* Sections */
+section {
+  margin-bottom: 3rem;
+}
+
+section h1 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2rem;
+  position: relative;
+}
+
+section h1::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  margin: 0.5rem auto;
+}
+
+/* Navigation en un clic */
+.accessible-elements {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.accessible-elements div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-start;
+  padding: 1rem;
+  width: 450px;
+  border-radius: 15px;
+  background-color: #d3d3d3;
+}
+
+.accessible-elements div:hover {
+  background-color: #c0c0c0;
+}
+
+.accessible-elements i {
+  font-size: large;
+}
+
+.accessible-elements p {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Exposition */
+.border {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .border {
+    flex-direction: row;
+  }
+}
+
+.border img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .border img {
+    width: 50%;
+  }
+}
+
+.border-text {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-up h2 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.text-down {
+  margin-top: 2rem;
+}
+
+.text-down p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Sections événements */
+.visit h1 {
+  margin-bottom: 2rem;
+}
+
+.event {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.event div {
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+.event div:hover,
+.event div:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.event img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.event h2,
+.event p {
+  padding: 0 1rem;
+}
+
+.event h2 {
+  margin: 1rem 0;
+  color: var(--primary-color);
+}
+
+.event p {
+  margin-bottom: 1rem;
+}
+
+/* Boutons */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  margin: 1rem;
+  background-color: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed) ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--link-hover-color);
+  text-decoration: none;
+  color: white;
+}
+
+.btn-exposition {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
+/* Visually hidden class pour les éléments qui doivent être accessibles aux lecteurs d'écran mais non visibles */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Styles pour le mode de contraste élevé */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #000000;
+    --secondary-color: #000000;
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --link-color: #0000ee;
+    --link-hover-color: #551a8b;
+    --focus-outline: 3px solid #000000;
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    outline: 2px solid black;
+  }
+
+  img {
+    filter: contrast(120%);
+  }
+}
+
+/* Styles pour le mode réduit de mouvement */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .accessibility-panel {
+    transition: none !important;
+  }
+}
+
+.decouvrir {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px black solid;
+  padding: 20px;
+}
+
+.bord {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px black solid;
+  padding: 20px;
+}
+
+.bord h1 {
+  /* propriété titre 1 */
+}
