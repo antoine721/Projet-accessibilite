@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <!-- Changé à fr pour correspondre au contenu français -->
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -24,7 +23,7 @@
     <div class="content-skip-nav">
       <ul>
         <li>
-          <a href="accessibility-panel" class="skip-to-content"
+          <a href="#accessibility-panel" class="skip-to-content"
             >Outils d'accessibilité</a
           >
         </li>
@@ -47,6 +46,7 @@
       class="accessibility-toggle"
       aria-expanded="false"
       tabindex="0"
+      role="button"
       aria-label="Ouvrir le menu d'accessibilité"
     >
       <i class="fa-solid fa-eye-low-vision"></i>
@@ -80,58 +80,73 @@
       </nav>
     </header>
     <main id="main">
+      <section class="slider-container">
+        <div class="slider">
+          <img src="public/img (12).jpg" alt="Image 1 description" />
+          <img src="public/img (4).jpg" alt="Image 2 description" />
+          <img src="public/img (1).jpg" alt="Image 3 description" />
+          <img src="public/img (10).jpg" alt="Image 4 description" />
+          <img src="public/img (8).jpg" alt="Image 5 description" />
+          <img src="public/img (7).jpg" alt="Image 6 description" />
+          <img src="public/img (13).jpg" alt="Image 7 description" />
+        </div>
+        <button class="prev" aria-label="Précédente">⬅</button>
+        <button class="next" aria-label="Suivante">➡</button>
+        <button class="pause" style="visibility: hidden" aria-label="Pause">
+          ⏸
+        </button>
+        <div id="slide-status" aria-live="polite"></div>
+      </section>
+
+      <script src="slider.js"></script>
+
       <section id="decouvrir" class="decouvrir">
-        <div class="bord">
-          <h1>Navigation en un clic</h1>
-          <div class="accessible-elements">
-            <div class="element1" tabindex="0">
-              <i class="fa-solid fa-clock"></i>
-              <p>Les horaires</p>
-            </div>
-            <div class="element2" tabindex="0">
-              <i class="fa-solid fa-tags"></i>
-              <p>Réserver des billets</p>
-            </div>
-            <div class="element3" tabindex="0">
-              <i class="fa-solid fa-calendar-days"></i>
-              <p>Événements en cours</p>
-            </div>
-            <div class="element4" tabindex="0">
-              <i class="fa-solid fa-location-dot"></i>
-              <p>Localisation du musée</p>
-            </div>
-            <div class="element5" tabindex="0">
+        <h1>Navigation en un clic</h1>
+        <div class="accessible-elements">
+          <div class="element1" tabindex="0" role="button">
+            <i class="fa-solid fa-clock"></i>
+            <p>Les horaires</p>
+          </div>
+          <div class="element2" tabindex="0" role="button">
+            <i class="fa-solid fa-tags"></i>
+            <p>Réserver des billets</p>
+          </div>
+          <div class="element3" tabindex="0" role="button">
+            <i class="fa-solid fa-calendar-days"></i>
+            <p>Événements en cours</p>
+          </div>
+          <div class="element4" tabindex="0" role="button">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Localisation du musée</p>
+          </div>
+          <div class="element5" tabindex="0" role="button">
+            <a href="contact.html">
               <i class="fa-solid fa-address-book"></i>
               <p>Nous contacter</p>
-            </div>
-            <div class="element6" tabindex="0">
-              <i class="fa-solid fa-podcast"></i>
-              <p>Podcast</p>
-            </div>
+            </a>
+          </div>
+          <div class="element6" tabindex="0" role="button">
+            <i class="fa-solid fa-podcast"></i>
+            <p>Podcast</p>
           </div>
         </div>
       </section>
 
-      <section id="evenements">
+      <section id="evenements" class="evenements">
         <div class="border" role="article" aria-labelledby="expo-heading">
           <img
-            src="Hommeetloup.jpg"
+            src="wolf.png"
             alt="Illustration de l'exposition 'S'éclairer sans fin' montrant un homme et un loup"
           />
           <div class="border-text">
             <div class="text-up">
-              <h2 id="expo-heading">EXPOSITION</h2>
-              <h3>DU 10 DÉCEMBRE 2024 AU 4 MAI 2025</h3>
+              <h1 id="expo-heading">EXPOSITION</h1>
+              <h1>DU 10 DÉCEMBRE 2024 AU</h1>
+              <h1>4 MAI 2025</h1>
             </div>
             <div class="text-down">
               <p>S'éclairer sans fin</p>
-              <h3>Par Jean-Michel Basquiat</h3>
-              <a
-                href="#"
-                class="btn btn-exposition"
-                aria-label="En savoir plus sur l'exposition S'éclairer sans fin"
-                >En savoir plus</a
-              >
+              <h1>Par Jean-Michel Basquiat</h1>
             </div>
           </div>
         </div>
@@ -141,40 +156,34 @@
         <h1>RENDEZ-VOUS</h1>
         <div class="event">
           <div class="event1" role="article">
-            <img src="event1.png" alt="Illustration du premier événement" />
+            <img
+              src="img (2).png"
+              alt="Illustration du premier événement"
+              loading="lazy"
+            />
             <h2>TITRE DE L'ÉVÉNEMENT</h2>
             <p>Description de l'événement</p>
             <p>Date et horaires</p>
-            <a
-              href="#"
-              class="btn"
-              aria-label="Plus d'informations sur cet événement"
-              >En savoir plus</a
-            >
           </div>
           <div class="event2" role="article">
-            <img src="event2.png" alt="Illustration du deuxième événement" />
+            <img
+              src="img (3).png"
+              alt="Illustration du deuxième événement"
+              loading="lazy"
+            />
             <h2>TITRE DE L'ÉVÉNEMENT</h2>
             <p>Description de l'événement</p>
             <p>Date et horaires</p>
-            <a
-              href="#"
-              class="btn"
-              aria-label="Plus d'informations sur cet événement"
-              >En savoir plus</a
-            >
           </div>
           <div class="event3" role="article">
-            <img src="event3.png" alt="Illustration du troisième événement" />
+            <img
+              src="img (11).png"
+              alt="Illustration du troisième événement"
+              loading="lazy"
+            />
             <h2>TITRE DE L'ÉVÉNEMENT</h2>
             <p>Description de l'événement</p>
             <p>Date et horaires</p>
-            <a
-              href="#"
-              class="btn"
-              aria-label="Plus d'informations sur cet événement"
-              >En savoir plus</a
-            >
           </div>
         </div>
       </section>
@@ -184,48 +193,33 @@
         <div class="event">
           <div class="event1" role="article">
             <img
-              src="event1.png"
+              src="img (6).png"
               alt="Illustration de la première activité autour du musée"
+              loading="lazy"
             />
             <h2>TITRE DE L'ACTIVITÉ</h2>
             <p>Description de l'activité</p>
             <p>Informations pratiques</p>
-            <a
-              href="#"
-              class="btn"
-              aria-label="Plus d'informations sur cette activité"
-              >En savoir plus</a
-            >
           </div>
           <div class="event2" role="article">
             <img
-              src="event2.png"
+              src="img (9).png"
               alt="Illustration de la deuxième activité autour du musée"
+              loading="lazy"
             />
             <h2>TITRE DE L'ACTIVITÉ</h2>
             <p>Description de l'activité</p>
             <p>Informations pratiques</p>
-            <a
-              href="#"
-              class="btn"
-              aria-label="Plus d'informations sur cette activité"
-              >En savoir plus</a
-            >
           </div>
-          <div class="event3" role="article">
+          <div class="event1" role="article">
             <img
-              src="event3.png"
+              src="img (5).jpg"
               alt="Illustration de la troisième activité autour du musée"
+              loading="lazy"
             />
             <h2>TITRE DE L'ACTIVITÉ</h2>
             <p>Description de l'activité</p>
             <p>Informations pratiques</p>
-            <a
-              href="#"
-              class="btn"
-              aria-label="Plus d'informations sur cette activité"
-              >En savoir plus</a
-            >
           </div>
         </div>
       </section>
@@ -233,7 +227,7 @@
 
     <footer>
       <ul class="list_footer">
-        <li><a href="">Nous Contacter</a></li>
+        <li><a href="contact.html">Nous Contacter</a></li>
         <li><a href="">Livre d'or</a></li>
         <li><a href="">Amis du musée</a></li>
         <li><a href="">Candidature</a></li>
@@ -256,6 +250,51 @@
       </div>
     </footer>
 
-    <script type="module" src="/src/main.js"></script>
+    <script>
+      // JavaScript pour le panneau d'accessibilité
+      document.addEventListener("DOMContentLoaded", function () {
+        const accessToggle = document.querySelector(".accessibility-toggle");
+        const accessPanel = document.querySelector(".accessibility-panel");
+        const closePanel = document.querySelector(".close-panel");
+        const increaseText = document.getElementById("increase-text");
+        const decreaseText = document.getElementById("decrease-text");
+
+        // Ouvrir/fermer le panneau d'accessibilité
+        accessToggle.addEventListener("click", function () {
+          accessPanel.classList.toggle("open");
+          const isExpanded = accessPanel.classList.contains("open");
+          accessToggle.setAttribute("aria-expanded", isExpanded);
+          accessPanel.setAttribute("aria-hidden", !isExpanded);
+        });
+
+        // Fermer le panneau avec le bouton de fermeture
+        closePanel.addEventListener("click", function () {
+          accessPanel.classList.remove("open");
+          accessToggle.setAttribute("aria-expanded", "false");
+          accessPanel.setAttribute("aria-hidden", "true");
+          accessToggle.focus(); // Retour du focus pour une meilleure accessibilité
+        });
+
+        // Augmenter la taille du texte
+        increaseText.addEventListener("click", function () {
+          if (document.body.classList.contains("font-size-large")) {
+            document.body.classList.remove("font-size-large");
+            document.body.classList.add("font-size-larger");
+          } else if (!document.body.classList.contains("font-size-larger")) {
+            document.body.classList.add("font-size-large");
+          }
+        });
+
+        // Diminuer la taille du texte
+        decreaseText.addEventListener("click", function () {
+          if (document.body.classList.contains("font-size-larger")) {
+            document.body.classList.remove("font-size-larger");
+            document.body.classList.add("font-size-large");
+          } else if (document.body.classList.contains("font-size-large")) {
+            document.body.classList.remove("font-size-large");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

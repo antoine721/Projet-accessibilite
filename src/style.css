@@ -26,6 +26,10 @@ html {
 }
 
 body {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
   line-height: 1.6;
@@ -209,6 +213,7 @@ body.light-background {
 /* Header et navigation */
 header {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   padding: 10px;
@@ -222,7 +227,7 @@ header img {
   height: auto;
 }
 nav {
-  width: 100vw;
+  width: 100%;
   border: 1px solid rgb(0, 0, 0);
   box-sizing: border-box;
   margin-top: 10px;
@@ -254,6 +259,9 @@ nav a:focus {
 
 /* Main content */
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 2rem 0;
 }
 
@@ -269,17 +277,9 @@ section h1 {
   position: relative;
 }
 
-section h1::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 3px;
-  background-color: var(--secondary-color);
-  margin: 0.5rem auto;
-}
-
 /* Navigation en un clic */
 .accessible-elements {
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -314,6 +314,8 @@ section h1::after {
 /* Exposition */
 .border {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   background-color: #f8f9fa;
   border-radius: var(--border-radius);
@@ -327,6 +329,7 @@ section h1::after {
 }
 
 .border img {
+  padding: 10px;
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -339,18 +342,27 @@ section h1::after {
 }
 
 .border-text {
-  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid black;
+  margin: 10px;
+  gap: 5rem;
 }
 
-.text-up h2 {
-  margin-bottom: 0.5rem;
-  color: var(--primary-color);
+.text-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .text-down {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin-top: 2rem;
 }
 
@@ -364,13 +376,25 @@ section h1::after {
   margin-bottom: 2rem;
 }
 
+.visit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 2rem;
+}
+
 .event {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 
 .event div {
+  padding: 1rem;
   border: 1px solid #e0e0e0;
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -512,8 +536,10 @@ footer a:focus {
 }
 
 .decouvrir {
+  width: 70%;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   border: 1px black solid;
   padding: 20px;
@@ -528,6 +554,90 @@ footer a:focus {
   padding: 20px;
 }
 
-.bord h1 {
+h1 {
   /* propriété titre 1 */
+}
+
+.evenements {
+  box-sizing: content-box;
+  border: 1px black solid;
+  width: 90%;
+  margin: 20px;
+  height: auto;
+}
+
+.event div img {
+  width: 300px;
+  height: auto;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slider img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider img:first-child {
+  opacity: 1;
+}
+
+.slider-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 25px;
+  border-radius: 100%;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-container button:focus {
+  outline: 2px solid white;
+  box-shadow: 0 0 5px white;
+}
+
+.slider-container button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: background-color 0.3s ease;
+}
+
+.prev {
+  left: 20px;
+}
+.next {
+  right: 20px;
+}
+
+.pause {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: auto;
 }

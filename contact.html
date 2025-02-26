@@ -1,182 +1,204 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="author" content="" />
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <title>Formulaire De Contact</title>
+    <title>Formulaire De Contact</title>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OpenDyslexic/0.91/OpenDyslexic.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OpenDyslexic/0.91/OpenDyslexic.css"
+    />
 
-        <link rel="stylesheet" type="text/css" href="contact.css" />
+    <link rel="stylesheet" type="text/css" href="contact.css" />
+    <link rel="stylesheet" href="src/style.css" />
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-    <body>
-        <header></header>
+  <body>
+    <header id="header">
+      <img src="logo.png" alt="Logo du Musée de la Chasse et de la Nature" />
+      <nav id="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="#decouvrir">DÉCOUVRIR</a></li>
+          <li><a href="#evenements">ÉVÉNEMENTS</a></li>
+          <li><a href="#visiter">VISITER</a></li>
+          <li><a href="#autour">AUTOUR DU MUSÉE</a></li>
+        </ul>
+      </nav>
+    </header>
 
-        <main>
-            <section aria-labelledby="contact-title">
-                <h2 id="contact-title">Contactez-nous</h2>
-                <form action="">
-                    <fieldset>
-                        <legend>Formulaire de contact</legend>
-                        <label for="name">Nom</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Votre nom"
-                            required
-                        />
+    <main>
+      <section aria-labelledby="contact-title">
+        <h2 id="contact-title">Contactez-nous</h2>
+        <form action="">
+          <fieldset>
+            <legend>Formulaire de contact</legend>
+            <label for="name">Nom</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Votre nom"
+              required
+            />
 
-                        <label for="email">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Votre email"
-                            required
-                        />
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Votre email"
+              required
+            />
 
-                        <label for="message">Message</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Votre message"
-                            required
-                        ></textarea>
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Votre message"
+              required
+            ></textarea>
 
-                        <button type="submit">Envoyer</button>
-                    </fieldset>
-                </form>
-            </section>
+            <button type="submit">Envoyer</button>
+          </fieldset>
+        </form>
+      </section>
 
-            <hr />
+      <hr />
 
-            <section class="stats">
-                <h2>Tableau de Statistiques</h2>
+      <section class="stats">
+        <h2>Tableau de Statistiques</h2>
 
-                <table aria-label="Statistiques des visiteurs">
-                    <tr>
-                        <th scope="col">Mois</th>
-                        <th scope="col">Visiteurs</th>
-                        <th scope="col">Pages vues</th>
-                    </tr>
-                    <tr>
-                        <td>Janvier</td>
-                        <td>120</td>
-                        <td>300</td>
-                    </tr>
-                    <tr>
-                        <td>Février</td>
-                        <td>150</td>
-                        <td>350</td>
-                    </tr>
-                    <tr>
-                        <td>Mars</td>
-                        <td>200</td>
-                        <td>400</td>
-                    </tr>
-                    <tr>
-                        <td>Avril</td>
-                        <td>180</td>
-                        <td>420</td>
-                    </tr>
-                    <tr>
-                        <td>Mai</td>
-                        <td>250</td>
-                        <td>500</td>
-                    </tr>
-                    <tr>
-                        <td>Juin</td>
-                        <td>300</td>
-                        <td>600</td>
-                    </tr>
-                    <tr>
-                        <td>Juillet</td>
-                        <td>270</td>
-                        <td>580</td>
-                    </tr>
-                    <tr>
-                        <td>Août</td>
-                        <td>260</td>
-                        <td>570</td>
-                    </tr>
-                    <tr>
-                        <td>Septembre</td>
-                        <td>280</td>
-                        <td>590</td>
-                    </tr>
-                    <tr>
-                        <td>Octobre</td>
-                        <td>320</td>
-                        <td>650</td>
-                    </tr>
-                    <tr>
-                        <td>Novembre</td>
-                        <td>350</td>
-                        <td>700</td>
-                    </tr>
-                    <tr>
-                        <td>Décembre</td>
-                        <td>400</td>
-                        <td>800</td>
-                    </tr>
-                </table>
-            </section>
-        </main>
+        <table aria-label="Statistiques des visiteurs">
+          <tr>
+            <th scope="col">Mois</th>
+            <th scope="col">Visiteurs</th>
+            <th scope="col">Pages vues</th>
+          </tr>
+          <tr>
+            <td>Janvier</td>
+            <td>120</td>
+            <td>300</td>
+          </tr>
+          <tr>
+            <td>Février</td>
+            <td>150</td>
+            <td>350</td>
+          </tr>
+          <tr>
+            <td>Mars</td>
+            <td>200</td>
+            <td>400</td>
+          </tr>
+          <tr>
+            <td>Avril</td>
+            <td>180</td>
+            <td>420</td>
+          </tr>
+          <tr>
+            <td>Mai</td>
+            <td>250</td>
+            <td>500</td>
+          </tr>
+          <tr>
+            <td>Juin</td>
+            <td>300</td>
+            <td>600</td>
+          </tr>
+          <tr>
+            <td>Juillet</td>
+            <td>270</td>
+            <td>580</td>
+          </tr>
+          <tr>
+            <td>Août</td>
+            <td>260</td>
+            <td>570</td>
+          </tr>
+          <tr>
+            <td>Septembre</td>
+            <td>280</td>
+            <td>590</td>
+          </tr>
+          <tr>
+            <td>Octobre</td>
+            <td>320</td>
+            <td>650</td>
+          </tr>
+          <tr>
+            <td>Novembre</td>
+            <td>350</td>
+            <td>700</td>
+          </tr>
+          <tr>
+            <td>Décembre</td>
+            <td>400</td>
+            <td>800</td>
+          </tr>
+        </table>
+      </section>
+    </main>
 
-        <footer>
-            <nav>
-                <ul>
-                    <li><a href="#">Nous contacter</a></li>
-                    <li><a href="#">Livre d'or</a></li>
-                    <li><a href="#">Amis du musée</a></li>
-                    <li><a href="#">Candidatures</a></li>
-                    <li><a href="#">Presse</a></li>
-                </ul>
-            </nav>
-            <hr>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="#">Nous contacter</a></li>
+          <li><a href="#">Livre d'or</a></li>
+          <li><a href="#">Amis du musée</a></li>
+          <li><a href="#">Candidatures</a></li>
+          <li><a href="#">Presse</a></li>
+        </ul>
+      </nav>
+      <hr />
 
-            <div class="footer_content">
-                <div class="empty_col"></div>
+      <div class="footer_content">
+        <div class="empty_col"></div>
 
-                <div class="logo">
-                    <img src="img/logo.png" alt="Logo" />
-                </div>
+        <div class="logo">
+          <img src="img/logo.png" alt="Logo" />
+        </div>
 
-                <div class="newsletter">
-                    <a href="#"><i class="fa-regular fa-envelope"></i> S'abonner à la newsletter</a>
-                </div>
-            </div>
+        <div class="newsletter">
+          <a href="#"
+            ><i class="fa-regular fa-envelope"></i> S'abonner à la newsletter</a
+          >
+        </div>
+      </div>
 
-            <hr>
+      <hr />
 
-            <div class="icons">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            </div>
+      <div class="icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
 
-            <hr>
+      <hr />
 
-            <div>
-                <nav>
-                    <ul>
-                        <li>Mention légales</li>
-                        <li>Fondation François Sommer, reconnue d'utilité publique</li>
-                        <li>Crédits</li>
-                    </ul>
-                </nav>
-            </div>
-        </footer>
+      <div>
+        <nav>
+          <ul>
+            <li>Mention légales</li>
+            <li>Fondation François Sommer, reconnue d'utilité publique</li>
+            <li>Crédits</li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
 
-        <script></script>
-    </body>
+    <script></script>
+  </body>
 </html>
