@@ -2,9 +2,16 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Site officiel du Musée de la Chasse et de la Nature à Paris - expositions, événements et informations pratiques"
+    />
+
     <title>Musée de la Chasse et de la Nature</title>
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="src/style.css" />
     <link
       rel="stylesheet"
@@ -13,12 +20,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Ajout de métadonnées descriptives -->
-    <meta
-      name="description"
-      content="Site officiel du Musée de la Chasse et de la Nature à Paris - expositions, événements et informations pratiques"
-    />
   </head>
+
   <body>
     <div class="content-skip-nav">
       <ul>
@@ -69,7 +72,10 @@
     </div>
 
     <header id="header">
-      <img src="logo.png" alt="Logo du Musée de la Chasse et de la Nature" />
+      <img
+        src="public/logo.png"
+        alt="Logo du Musée de la Chasse et de la Nature"
+      />
       <nav id="navigation" aria-label="Menu principal">
         <ul>
           <li><a href="#decouvrir">DÉCOUVRIR</a></li>
@@ -79,23 +85,23 @@
         </ul>
       </nav>
     </header>
+
     <main id="main">
       <section class="slider-container">
         <div class="slider">
-          <img src="public/img (12).jpg" alt="Image 1 description" />
-          <img src="public/img (4).jpg" alt="Image 2 description" />
-          <img src="public/img (1).jpg" alt="Image 3 description" />
-          <img src="public/img (10).jpg" alt="Image 4 description" />
-          <img src="public/img (8).jpg" alt="Image 5 description" />
-          <img src="public/img (7).jpg" alt="Image 6 description" />
-          <img src="public/img (13).jpg" alt="Image 7 description" />
+          <img src="public/img (12).jpg" alt="" />
+          <img src="public/img (4).jpg" alt="" />
+          <img src="public/img (1).jpg" alt="" />
+          <img src="public/img (10).jpg" alt="" />
+          <img src="public/img (8).jpg" alt="" />
+          <img src="public/img (7).jpg" alt="" />
+          <img src="public/img (13).jpg" alt="" />
         </div>
         <button class="prev" aria-label="Précédente">⬅</button>
         <button class="next" aria-label="Suivante">➡</button>
         <button class="pause" style="visibility: hidden" aria-label="Pause">
           ⏸
         </button>
-        <div id="slide-status" aria-live="polite"></div>
       </section>
 
       <script src="slider.js"></script>
@@ -119,12 +125,12 @@
             <i class="fa-solid fa-location-dot"></i>
             <p>Localisation du musée</p>
           </div>
-          <div class="element5" tabindex="0" role="button">
-            <a href="contact.html">
+          <a href="contact.html">
+            <div class="element5" tabindex="0" role="button">
               <i class="fa-solid fa-address-book"></i>
               <p>Nous contacter</p>
-            </a>
-          </div>
+            </div>
+          </a>
           <div class="element6" tabindex="0" role="button">
             <i class="fa-solid fa-podcast"></i>
             <p>Podcast</p>
@@ -135,7 +141,7 @@
       <section id="evenements" class="evenements">
         <div class="border" role="article" aria-labelledby="expo-heading">
           <img
-            src="wolf.png"
+            src="public/wolf.png"
             alt="Illustration de l'exposition 'S'éclairer sans fin' montrant un homme et un loup"
           />
           <div class="border-text">
@@ -157,7 +163,7 @@
         <div class="event">
           <div class="event1" role="article">
             <img
-              src="img (2).png"
+              src="public/img (2).png"
               alt="Illustration du premier événement"
               loading="lazy"
             />
@@ -167,7 +173,7 @@
           </div>
           <div class="event2" role="article">
             <img
-              src="img (3).png"
+              src="public/img (3).png"
               alt="Illustration du deuxième événement"
               loading="lazy"
             />
@@ -177,7 +183,7 @@
           </div>
           <div class="event3" role="article">
             <img
-              src="img (11).png"
+              src="public/img (11).png"
               alt="Illustration du troisième événement"
               loading="lazy"
             />
@@ -193,7 +199,7 @@
         <div class="event">
           <div class="event1" role="article">
             <img
-              src="img (6).png"
+              src="public/img (6).png"
               alt="Illustration de la première activité autour du musée"
               loading="lazy"
             />
@@ -202,7 +208,7 @@
           </div>
           <div class="event2" role="article">
             <img
-              src="img (9).png"
+              src="public/img (9).png"
               alt="Illustration de la deuxième activité autour du musée"
               loading="lazy"
             />
@@ -211,7 +217,7 @@
           </div>
           <div class="event1" role="article">
             <img
-              src="img (5).jpg"
+              src="public/img (5).jpg"
               alt="Illustration de la troisième activité autour du musée"
               loading="lazy"
             />
@@ -235,10 +241,20 @@
         <a href="">S'abonner a la newsletter</a>
       </div>
       <div class="reseaux_sociaux">
-        <a href=""><img src="public/facebook-round-svgrepo-com.svg" alt="Logo facebook" /></a>
-        <a href=""><img src="public/instagram-round-svgrepo-com.svg" alt="Logo instagram" /></a>
-        <a href=""><img src="public/twitter-round-svgrepo-com.svg" alt="Logo X" /></a>
-        <a href=""><img src="public/youtube-round-svgrepo-com.svg" alt="Logo Youtube" /></a>
+        <a href=""
+          ><img src="public/facebook-round-svgrepo-com.svg" alt="Logo facebook"
+        /></a>
+        <a href=""
+          ><img
+            src="public/instagram-round-svgrepo-com.svg"
+            alt="Logo instagram"
+        /></a>
+        <a href=""
+          ><img src="public/twitter-round-svgrepo-com.svg" alt="Logo X"
+        /></a>
+        <a href=""
+          ><img src="public/youtube-round-svgrepo-com.svg" alt="Logo Youtube"
+        /></a>
       </div>
       <div class="footer_legal">
         <a href="">Mentions légales</a>
