@@ -4,78 +4,39 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Site officiel du Musée de la Chasse et de la Nature à Paris - expositions, événements et informations pratiques"
-    />
+    <meta name="description" content="Site officiel du Musée de la Chasse et de la Nature à Paris - expositions, événements et informations pratiques" />
 
     <title>Musée de la Chasse et de la Nature</title>
 
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="src/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
 
   <body>
     <div class="content-skip-nav">
       <ul>
-        <li>
-          <a href="#accessibility-panel" class="skip-to-content"
-            >Outils d'accessibilité</a
-          >
-        </li>
+        <li><a href="#accessibility-panel" class="skip-to-content">Paramètres d'accessibilité</a></li>
         <li><a href="#main" class="skip-to-content">Aller au contenu</a></li>
-        <li>
-          <a href="#navigation" class="skip-to-content"
-            >Aller au menu de navigation</a
-          >
-        </li>
-        <li>
-          <a href="plandusite.html" class="skip-to-content">Plan du site</a>
-        </li>
-        <li>
-          <a href="#footer" class="skip-to-content">Aller au pied de page</a>
-        </li>
+        <li><a href="#navigation" class="skip-to-content">Aller au menu de navigation</a></li>
+        <li><a href="#" class="skip-to-content">Plan du site</a></li>
+        <li><a href="#footer" class="skip-to-content">Aller au pied de page</a></li>
       </ul>
     </div>
 
-    <div
-      class="accessibility-toggle"
-      aria-expanded="false"
-      tabindex="0"
-      role="button"
-      aria-label="Ouvrir le menu d'accessibilité"
-    >
+    <div class="accessibility-toggle" aria-expanded="false" tabindex="0" role="button" aria-label="Ouvrir le menu d'accessibilité">
       <i class="fa-solid fa-eye-low-vision"></i>
     </div>
 
-    <div
-      class="accessibility-panel"
-      id="accessibility-panel"
-      aria-hidden="true"
-    >
+    <div class="accessibility-panel" id="accessibility-panel" aria-hidden="true">
       <h2>Options d'accessibilité</h2>
       <button class="btn-access" id="increase-text">Augmenter le Texte</button>
       <button class="btn-access" id="decrease-text">Diminuer le Texte</button>
-      <button
-        class="btn-access close-panel"
-        aria-label="Fermer le menu d'accessibilité"
-      >
-        Fermer
-      </button>
+      <button class="btn-access close-panel" aria-label="Fermer le menu d'accessibilité">Fermer</button>
     </div>
 
-    <header id="header">
-      <img
-        src="public/logo.png"
-        alt="Logo du Musée de la Chasse et de la Nature"
-      />
+    <header>
+      <img src="public/logo.png" alt="Logo du Musée de la Chasse et de la Nature">
       <nav id="navigation" aria-label="Menu principal">
         <ul>
           <li><a href="#decouvrir">DÉCOUVRIR</a></li>
@@ -87,7 +48,7 @@
     </header>
 
     <main id="main">
-      <section class="slider-container">
+      <section class="slider-container" aria-label="Caroussel d'images">
         <div class="slider">
           <img src="public/img (12).jpg" alt="" />
           <img src="public/img (4).jpg" alt="" />
@@ -103,8 +64,6 @@
           ⏸
         </button>
       </section>
-
-      <script src="slider.js"></script>
 
       <section id="decouvrir" class="decouvrir">
         <h1>Navigation en un clic</h1>
@@ -138,55 +97,36 @@
         </div>
       </section>
 
-      <section id="evenements" class="evenements">
-        <div class="border" role="article" aria-labelledby="expo-heading">
-          <img
-            src="public/wolf.png"
-            alt="Illustration de l'exposition 'S'éclairer sans fin' montrant un homme et un loup"
-          />
-          <div class="border-text">
-            <div class="text-up">
-              <h1 id="expo-heading">EXPOSITION</h1>
-              <h1>DU 10 DÉCEMBRE 2024 AU</h1>
-              <h1>4 MAI 2025</h1>
-            </div>
-            <div class="text-down">
-              <p>S'éclairer sans fin</p>
-              <h1>Par Jean-Michel Basquiat</h1>
-            </div>
+      <section id="evenements" class="evenements" role="article" aria-labelledby="expo-heading">
+        <img src="public/wolf.png" alt="Illustration de l'exposition 'S'éclairer sans fin' montrant un homme et un loup" />
+        <div class="evenements-text">
+          <div class="text-up">
+            <h1 id="expo-heading">EXPOSITION <br> DU 10 DÉCEMBRE 2024 AU <br> 4 MAI 2025</h1>
+          </div>
+          <div class="text-down">
+            <p>S'éclairer sans fin</p>
+            <h1>Par Jean-Michel Basquiat</h1>
           </div>
         </div>
       </section>
 
       <section id="visiter" class="visit">
         <h1>RENDEZ-VOUS</h1>
-        <div class="event">
-          <div class="event1" role="article">
-            <img
-              src="public/img (2).png"
-              alt="Illustration du premier événement"
-              loading="lazy"
-            />
+        <div class="events">
+          <div class="event" role="article">
+            <img src="public/img (2).png" alt="Illustration du premier événement" loading="lazy" />
             <h2>ATELIER D'ECRITURE PAR L'ECRIVAIN POETE FRANCK DOYEN</h2>
             <p>Organisé par la bibliotheque Merguerite Audoux</p>
             <p>Du 1er mars au 3 mai 2025, 14h15</p>
           </div>
-          <div class="event2" role="article">
-            <img
-              src="public/img (3).png"
-              alt="Illustration du deuxième événement"
-              loading="lazy"
-            />
+          <div class="event" role="article">
+            <img src="public/img (3).png" alt="Illustration du deuxième événement" loading="lazy" />
             <h2>LE PRINTEMPS DES JARDINIERS</h2>
             <p>Projection - Avant-Première</p>
             <p>Mercredi 5 mars 2025, 19h00</p>
           </div>
-          <div class="event3" role="article">
-            <img
-              src="public/img (11).png"
-              alt="Illustration du troisième événement"
-              loading="lazy"
-            />
+          <div class="event" role="article">
+            <img src="public/img (11).png" alt="Illustration du troisième événement" loading="lazy" />
             <h2>LE DERNIER DES SIENS</h2>
             <p>Lecture-concert d'après le roman de Sibylle Grimbert, Prix Francois Sommer 2023</p>
             <p>Mercredi 12 Mars 2025, 19h00</p>
@@ -196,8 +136,8 @@
 
       <section id="autour" class="visit">
         <h1>AUTOUR DU MUSÉE</h1>
-        <div class="event">
-          <div class="event1" role="article">
+        <div class="events">
+          <div class="event" role="article">
             <img
               src="public/img (6).png"
               alt="Illustration de la première activité autour du musée"
@@ -206,7 +146,7 @@
             <h2>RENCONTRES SAUVAGES AVEC EDI DUBIEN, ARTISTE</h2>
             <p>Podcast</p>
           </div>
-          <div class="event2" role="article">
+          <div class="event" role="article">
             <img
               src="public/img (9).png"
               alt="Illustration de la deuxième activité autour du musée"
@@ -215,7 +155,7 @@
             <h2>RENCONTRES SAUVAGES AVEC ANOUK LEJCZYK, AUTEURE ET APPRENTIE FORESTIERE</h2>
             <p>Podcast</p>
           </div>
-          <div class="event1" role="article">
+          <div class="event" role="article">
             <img
               src="public/img (5).jpg"
               alt="Illustration de la troisième activité autour du musée"
@@ -263,51 +203,7 @@
       </div>
     </footer>
 
-    <script>
-      // JavaScript pour le panneau d'accessibilité
-      document.addEventListener("DOMContentLoaded", function () {
-        const accessToggle = document.querySelector(".accessibility-toggle");
-        const accessPanel = document.querySelector(".accessibility-panel");
-        const closePanel = document.querySelector(".close-panel");
-        const increaseText = document.getElementById("increase-text");
-        const decreaseText = document.getElementById("decrease-text");
-
-        // Ouvrir/fermer le panneau d'accessibilité
-        accessToggle.addEventListener("click", function () {
-          accessPanel.classList.toggle("open");
-          const isExpanded = accessPanel.classList.contains("open");
-          accessToggle.setAttribute("aria-expanded", isExpanded);
-          accessPanel.setAttribute("aria-hidden", !isExpanded);
-        });
-
-        // Fermer le panneau avec le bouton de fermeture
-        closePanel.addEventListener("click", function () {
-          accessPanel.classList.remove("open");
-          accessToggle.setAttribute("aria-expanded", "false");
-          accessPanel.setAttribute("aria-hidden", "true");
-          accessToggle.focus(); // Retour du focus pour une meilleure accessibilité
-        });
-
-        // Augmenter la taille du texte
-        increaseText.addEventListener("click", function () {
-          if (document.body.classList.contains("font-size-large")) {
-            document.body.classList.remove("font-size-large");
-            document.body.classList.add("font-size-larger");
-          } else if (!document.body.classList.contains("font-size-larger")) {
-            document.body.classList.add("font-size-large");
-          }
-        });
-
-        // Diminuer la taille du texte
-        decreaseText.addEventListener("click", function () {
-          if (document.body.classList.contains("font-size-larger")) {
-            document.body.classList.remove("font-size-larger");
-            document.body.classList.add("font-size-large");
-          } else if (document.body.classList.contains("font-size-large")) {
-            document.body.classList.remove("font-size-large");
-          }
-        });
-      });
-    </script>
+    <script src="slider.js"></script>
+    <script src="accessibility.js"></script>
   </body>
 </html>
