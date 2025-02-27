@@ -536,10 +536,6 @@ footer{
   color: #000;
 }
 
-@media screen and (max-width: 768px) {
-  
-}
-
 /* CONTACT PAGE */
 .contact-form h2, .stats h2 {
   text-align: center;
@@ -643,6 +639,8 @@ tr {
   border: 0;
 }
 
+/* RESPONSIVE */
+/* Responsive pour tablettes */
 @media screen and (max-width: 1024px) {
   header nav ul {
     flex-direction: column;
