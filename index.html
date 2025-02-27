@@ -2,70 +2,37 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Site officiel du Musée de la Chasse et de la Nature à Paris - expositions, événements et informations pratiques"/>
+
     <title>Musée de la Chasse et de la Nature</title>
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="src/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- Ajout de métadonnées descriptives -->
-    <meta
-      name="description"
-      content="Site officiel du Musée de la Chasse et de la Nature à Paris - expositions, événements et informations pratiques"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
   </head>
+
   <body>
     <div class="content-skip-nav">
       <ul>
-        <li>
-          <a href="#accessibility-panel" class="skip-to-content"
-            >Outils d'accessibilité</a
-          >
-        </li>
+        <li><a href="#accessibility-panel" class="skip-to-content">Outils d'accessibilité</a></li>
         <li><a href="#main" class="skip-to-content">Aller au contenu</a></li>
-        <li>
-          <a href="#navigation" class="skip-to-content"
-            >Aller au menu de navigation</a
-          >
-        </li>
-        <li>
-          <a href="plandusite.html" class="skip-to-content">Plan du site</a>
-        </li>
-        <li>
-          <a href="#footer" class="skip-to-content">Aller au pied de page</a>
-        </li>
+        <li><a href="#navigation" class="skip-to-content">Aller au menu de navigation</a></li>
+        <li><a href="plandusite.html" class="skip-to-content">Plan du site</a></li>
+        <li><a href="#footer" class="skip-to-content">Aller au pied de page</a></li>
       </ul>
     </div>
 
-    <div
-      class="accessibility-toggle"
-      aria-expanded="false"
-      tabindex="0"
-      role="button"
-      aria-label="Ouvrir le menu d'accessibilité"
-    >
+    <div class="accessibility-toggle" aria-expanded="false" tabindex="0" role="button" aria-label="Ouvrir le menu d'accessibilité">
       <i class="fa-solid fa-eye-low-vision"></i>
     </div>
 
-    <div
-      class="accessibility-panel"
-      id="accessibility-panel"
-      aria-hidden="true"
-    >
+    <div class="accessibility-panel" id="accessibility-panel" aria-hidden="true">
       <h2>Options d'accessibilité</h2>
       <button class="btn-access" id="increase-text">Augmenter le Texte</button>
       <button class="btn-access" id="decrease-text">Diminuer le Texte</button>
-      <button
-        class="btn-access close-panel"
-        aria-label="Fermer le menu d'accessibilité"
-      >
-        Fermer
-      </button>
+      <button class="btn-access close-panel" aria-label="Fermer le menu d'accessibilité">Fermer</button>
     </div>
 
     <header id="header">
@@ -79,23 +46,21 @@
         </ul>
       </nav>
     </header>
+
     <main id="main">
       <section class="slider-container">
         <div class="slider">
-          <img src="public/img (12).jpg" alt="Image 1 description" />
-          <img src="public/img (4).jpg" alt="Image 2 description" />
-          <img src="public/img (1).jpg" alt="Image 3 description" />
-          <img src="public/img (10).jpg" alt="Image 4 description" />
-          <img src="public/img (8).jpg" alt="Image 5 description" />
-          <img src="public/img (7).jpg" alt="Image 6 description" />
-          <img src="public/img (13).jpg" alt="Image 7 description" />
+          <img src="img (12).jpg" alt="" />
+          <img src="img (4).jpg" alt="" />
+          <img src="img (1).jpg" alt="" />
+          <img src="img (10).jpg" alt="" />
+          <img src="img (8).jpg" alt="" />
+          <img src="img (7).jpg" alt="" />
+          <img src="img (13).jpg" alt="" />
         </div>
         <button class="prev" aria-label="Précédente">⬅</button>
         <button class="next" aria-label="Suivante">➡</button>
-        <button class="pause" style="visibility: hidden" aria-label="Pause">
-          ⏸
-        </button>
-        <div id="slide-status" aria-live="polite"></div>
+        <button class="pause" style="visibility: hidden" aria-label="Pause">⏸</button>
       </section>
 
       <script src="slider.js"></script>
@@ -119,12 +84,12 @@
             <i class="fa-solid fa-location-dot"></i>
             <p>Localisation du musée</p>
           </div>
-          <div class="element5" tabindex="0" role="button">
-            <a href="contact.html">
-              <i class="fa-solid fa-address-book"></i>
-              <p>Nous contacter</p>
-            </a>
-          </div>
+          <a href="contact.html">
+            <div class="element5" tabindex="0" role="button">
+                <i class="fa-solid fa-address-book"></i>
+                <p>Nous contacter</p>
+              </div>
+          </a>
           <div class="element6" tabindex="0" role="button">
             <i class="fa-solid fa-podcast"></i>
             <p>Podcast</p>
@@ -134,10 +99,7 @@
 
       <section id="evenements" class="evenements">
         <div class="border" role="article" aria-labelledby="expo-heading">
-          <img
-            src="wolf.png"
-            alt="Illustration de l'exposition 'S'éclairer sans fin' montrant un homme et un loup"
-          />
+          <img src="wolf.png" alt="Illustration de l'exposition 'S'éclairer sans fin' montrant un homme et un loup" />
           <div class="border-text">
             <div class="text-up">
               <h1 id="expo-heading">EXPOSITION</h1>
@@ -234,14 +196,14 @@
         <li><a href="">Presse</a></li>
       </ul>
       <div class="logo_newsletter">
-        <img src="public/logo.png" alt="Logo du musée" />
+        <img src="logo.png" alt="Logo du musée" />
         <a href="">S'abonner a la newsletter</a>
       </div>
       <div class="reseaux_sociaux">
-        <a href=""><img src="public/facebook-round-svgrepo-com.svg" alt="Logo facebook" /></a>
-        <a href=""><img src="public/instagram-round-svgrepo-com.svg" alt="Logo instagram" /></a>
-        <a href=""><img src="public/twitter-round-svgrepo-com.svg" alt="Logo X" /></a>
-        <a href=""><img src="public/youtube-round-svgrepo-com.svg" alt="Logo Youtube" /></a>
+        <a href=""><img src="facebook-round-svgrepo-com.svg" alt="Logo facebook" /></a>
+        <a href=""><img src="instagram-round-svgrepo-com.svg" alt="Logo instagram" /></a>
+        <a href=""><img src="twitter-round-svgrepo-com.svg" alt="Logo X" /></a>
+        <a href=""><img src="youtube-round-svgrepo-com.svg" alt="Logo Youtube" /></a>
       </div>
       <div class="footer_legal">
         <a href="">Mentions légales</a>
