@@ -252,7 +252,7 @@ section {
   width: 90%;
 }
 
-section h1 {
+section h2 {
   text-align: center;
   color: var(--primary-color);
   font-size: 2rem;
@@ -421,7 +421,7 @@ section h1 {
   padding: 2rem;
 }
 
-.visit h1 {
+.visit h2 {
   margin-bottom: 2rem;
 }
 
